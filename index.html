@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>nodejs</title>
+    <title>landingPage</title>
     <style>
         body {
             font-family: Microsoft JhengHei !important;
+        }
+        .opacity-deep{
+            opacity: .8
         }
     </style>
 </head>
@@ -16,7 +19,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <a href="#" class="navbar-brand">主題名稱</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="mainMenu">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false"
+            aria-controls="mainMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainMenu">
@@ -33,19 +37,70 @@
                     </div>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#logout" class="nav-link">登出</a></li>
+            </ul>
         </div>
     </nav>
 
+    <div class="container-fluid">
+        <div class="col-12">
+            <div id="carouselmatter" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100"
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/75/%E7%9F%B3%E6%A2%AF%E5%9D%AA%E7%9A%84%E9%A2%A8%E6%99%AF%E7%85%A7%281%29.jpg"
+                            alt="">
+                        <div class="carousel-caption bg-dark opacity-deep">
+                            <h5>第一張風景圖</h5>
+                            <p>這是一張石梯坪的風景照</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/%E4%BC%BD%E8%97%8D%E5%B1%B1%E3%81%8B%E3%82%89%E3%81%AE%E9%A2%A8%E6%99%AF_-_panoramio_%281%29.jpg"
+                            alt="">
+                        <div class="carousel-caption bg-dark opacity-deep">
+                            <h5>第二張風景圖</h5>
+                            <p>這裡看起來像伽藍山的風景圖</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100"
+                            src="https://images.pexels.com/photos/875971/pexels-photo-875971.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                            alt="">
+                        <div class="carousel-caption bg-dark opacity-deep">
+                            <h5>第三張風景圖</h5>
+                            <p>這一張色系比較冷一點，不過也是我挑的</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#carouselmatter" class="carousel-control-prev" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">prev</span>
+                </a>
+                <a href="#carouselmatter" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">next</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css' />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.js'></script>
     <script>
-
-
+        $(function () {
+            $('.carousel').carousel({
+                interval: 2000
+            })
+        });
+        // 這裡要對圖片作一些裁切
+        // 再來嘗試把圖片挪上去。
+        
     </script>
 </body>
 
