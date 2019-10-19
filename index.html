@@ -61,8 +61,10 @@
                     <li class="nav-item"><a href="#" class="nav-link">測試3</a></li>
                 </ul>
                 <form class="ml-auto">
-                    <button class="btn btn-outline-info">註冊</button>
-                    <button class="btn btn-outline-primary ml-2">登入</button>
+                    <button class="btn btn-outline-info topprevent" data-target="#mainModal"
+                        data-toggle="modal">註冊</button>
+                    <button class="btn btn-outline-primary ml-2 topprevent" data-target="#logmodal"
+                        data-toggle="modal">登入</button>
                 </form>
             </div>
         </div>
@@ -303,6 +305,79 @@
             </div>
         </section>
 
+        <div id="mainModal" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success font-weight-bold">
+                        <div class="modal-title">
+                            註冊
+                        </div>
+                        <button class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body bg-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="tbregemail">*電子郵件</label>
+                                <input class="form-control" type="text" name="email" id="tbregemail">
+                            </div>
+                            <div class="form-group">
+                                <label for="tbregname">*姓名</label>
+                                <input class="form-control" type="text" name="name" id="tbregname">
+                            </div>
+                            <div class="form-group">
+                                <label for="tbregpass">*密碼</label>
+                                <input class="form-control" type="password" name="pass" id="tbregpass">
+                            </div>
+                            <div class="form-group">
+                                <label for="tbphone"">電話</label>
+                                <input class=" form-control" type=" text" name="phone" id="tbphone">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-form text-right">
+                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#logmodal">註冊過了?</button>
+                        <button class="btn btn-info ml-auto">確定</button>
+                        <button class="btn btn-outline-info" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 這個要做一個登入的表單 -->
+        <div id="logmodal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-light">
+                        <div class="modal-title">
+                            登入
+                        </div>
+                        <button class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body bg-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="tbaccount">*帳號</label>
+                                <input class="form-control" type="text" name="account" id="tbaccount">
+                                <small class="form-text">*輸入帳號為電子郵件或電話號碼</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbpass">*密碼</label>
+                                <input class="form-control" type="password" name="pw" id="tbpass">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-form text-right">
+                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#mainModal">尚未註冊?</button>
+                        <button class="btn btn-primary ml-auto">確定</button>
+                        <button class="btn btn-outline-primary" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' />
         <link rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css' />
@@ -331,6 +406,10 @@
                 $('.carousel').carousel({
                     interval: 5000
                 })
+
+                $('.topprevent').click(function (e) {
+                    e.preventDefault()
+                })
             });
 
             // >navbar
@@ -340,6 +419,7 @@
             // >2colmedia * 2
             // 2col>L:map+R:form
             // 最後只差一點就可以完成 modal 了
+            // 我們嘗試要用 bootstrap 的元件做一個切換
 
         </script>
 </body>
