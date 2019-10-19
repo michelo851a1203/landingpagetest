@@ -337,7 +337,8 @@
                         </form>
                     </div>
                     <div class="modal-footer bg-form text-right">
-                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#logmodal">註冊過了?</button>
+                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal"
+                            data-target="#logmodal">註冊過了?</button>
                         <button class="btn btn-info ml-auto">確定</button>
                         <button class="btn btn-outline-info" data-dismiss="modal">取消</button>
                     </div>
@@ -370,7 +371,8 @@
                         </form>
                     </div>
                     <div class="modal-footer bg-form text-right">
-                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#mainModal">尚未註冊?</button>
+                        <button class="btn btn-link" data-dismiss="modal" data-toggle="modal"
+                            data-target="#mainModal">尚未註冊?</button>
                         <button class="btn btn-primary ml-auto">確定</button>
                         <button class="btn btn-outline-primary" data-dismiss="modal">取消</button>
                     </div>
@@ -420,6 +422,21 @@
             // 2col>L:map+R:form
             // 最後只差一點就可以完成 modal 了
             // 我們嘗試要用 bootstrap 的元件做一個切換
+
+            // PS modal 再行動版互相切換會有一些問題
+            // 因為這時候 body 有個 modalopen 的屬性，導致錯誤。
+            // 錯誤在於 modal 的滾輪不能使用，變成只能滾動 body
+            // 不應該發生這事
+
+            $('button[data-dismiss="modal"][data-toggle="modal"]').click(function() {
+                const vm = $(this)
+                const target = vm.data('target')
+                
+                // 這個事件是 modal 完全顯示時，會觸發的動作。
+                $(target).on('shown.bs.modal',function () {
+                    $('body').addClass('modal-open')
+                })
+            })
 
         </script>
 </body>
